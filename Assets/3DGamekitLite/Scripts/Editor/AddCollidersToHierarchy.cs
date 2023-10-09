@@ -7,7 +7,7 @@ namespace Gamekit3D
 {
     public class AddCollidersToHierarchy : MonoBehaviour
     {
-
+ 
         [MenuItem("GameObject/Add Colliders To Children")]
         static void AddColliders()
         {
@@ -33,3 +33,5 @@ namespace Gamekit3D
         }
     } 
 }
+
+// test
