@@ -1,0 +1,10 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed (1)" type="RunUnityExe" factoryName="Unity Executable" nameIsGenerated="true">
+    <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Unity.exe" />
+    <option name="PROGRAM_PARAMETERS" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2022.3.10f1/Editor" />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <option name="USE_EXTERNAL_CONSOLE" value="0" />
+    <method v="2" />
+  </configuration>
+</component>
