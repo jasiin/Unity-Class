@@ -75,3 +75,17 @@ crashlytics-build.properties
 /.idea/.idea.My project.dir/.idea/vcs.xml
 /.idea/*
 /.idea/
+ 
+#Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/.idea.My project.iml
+/contentModel.xml
+/modules.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
