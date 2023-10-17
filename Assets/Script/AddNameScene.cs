@@ -1,26 +1,25 @@
-﻿﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Enums;
-using Facebook.Unity;
+/*using Enums;
+ using Facebook.Unity;
 #if UNITY_IOS
  using Unity.Notifications.iOS;
 #else
-using Unity.Notifications.Android;
-#endif
+ using Unity.Notifications.Android;
+#endif*/
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 
-using Facebook.Unity;
-using UnityEngine;
+//using Facebook.Unity;
 
 namespace Scenes.Scripts
 {
-    public class AddNameScene : Task
+    public class AddNameScene : MonoBehaviour
     {
         #region Components
 
@@ -46,7 +45,7 @@ namespace Scenes.Scripts
         void Start()
         {
 
-            FB.Init(this.OnInitComplete, this.OnHideUnity);
+            //FB.Init(this.OnInitComplete,this.OnHideUnity);
 
 
 
@@ -63,7 +62,7 @@ namespace Scenes.Scripts
             StartCoroutine(Delay());
         }
 
-        private void OnInitComplete()
+        /*private void OnInitComplete()
         {
             // Debug.Log( "Success - Check log for details");
             // Debug.Log( "Success Response: OnInitComplete Called");
@@ -76,12 +75,12 @@ namespace Scenes.Scripts
             {
                 Debug.Log(AccessToken.CurrentAccessToken.ToString());
             }
-
+        
             FB.LogAppEvent("Install");
-
+            
             //FB.Loginew List<string>() {}, this.HandleResult);
-
-        }
+        
+        }*/
 
 
         private void OnHideUnity(bool isGameShown)
@@ -94,14 +93,14 @@ namespace Scenes.Scripts
         IEnumerator Delay()
         {
             yield return new WaitForSeconds(0.7f);
-            RunNotifications();
+            //RunNotifications();
         }
 
 
-        private void RunNotifications()
+        /*private void RunNotifications()
         {
-
-
+            
+            
 #if UNITY_IOS
 
 var timeTrigger = new iOSNotificationTimeIntervalTrigger()
@@ -135,47 +134,47 @@ iOSNotificationCenter.ScheduleNotification(notification);
                 Importance = Importance.High,
                 Description = "Generic notifications",
             };
-
+            
             AndroidNotificationCenter.RegisterNotificationChannel(c);
-
-            // var notification = new AndroidNotification();
+            
+           // var notification = new AndroidNotification();
             AndroidNotification[] notification = new AndroidNotification[25];
-
-
+           
+            
             for (int i = 0; i < notification.Length; i++)
             {
                 notification[i].Title = "YEP";
                 notification[i].Text = message;
-                // notification[i].FireTime = System.DateTime.Now.AddMinutes((i) * 3);
+               // notification[i].FireTime = System.DateTime.Now.AddMinutes((i) * 3);
                 notification[i].FireTime = System.DateTime.Now.AddDays((i + 1) * 7);
                 AndroidNotificationCenter.SendNotification(notification[i], "channel_id");
             }
-
-            //            notification.Title = "SomeTitle";
-            //            notification.Text = "SomeText";
-            //            notification.FireTime = System.DateTime.Now.AddSeconds(2);
-            //            notification.RepeatInterval = TimeSpan.TicksPerSecond(1);
-            //
-            //            AndroidNotificationCenter.SendNotification(notification, "channel_id");
-
+            
+//            notification.Title = "SomeTitle";
+//            notification.Text = "SomeText";
+//            notification.FireTime = System.DateTime.Now.AddSeconds(2);
+//            notification.RepeatInterval = TimeSpan.TicksPerSecond(1);
+//
+//            AndroidNotificationCenter.SendNotification(notification, "channel_id");
+            
 
 #endif
-        }
+        }*/
 
         private void ResetTaskPercentages()
         {
-            ResetTasks("Analiza");
+            /*ResetTasks("Analiza");
             ResetTasks("Przedsiębiorczość");
             ResetTasks("Komunikacja");
-            ResetTasks("Podejmowanie decyzji");
+            ResetTasks("Podejmowanie decyzji");*/
             PlayerPrefs.SetInt("ProActivPoints", 0);
             PlayerPrefs.Save();
         }
 
         private void GetData()
         {
-            PlayerName = LoadData(Prefs.PlayerName);
-            Gender = LoadData(Prefs.Gender);
+            /*PlayerName = LoadData(Prefs.PlayerName);
+            Gender = LoadData(Prefs.Gender);*/
         }
 
         private void PrepareView()
@@ -210,7 +209,7 @@ iOSNotificationCenter.ScheduleNotification(notification);
 
         void Validation()
         {
-            if (regex.IsMatch(PlayerName) && Gender != "")
+            if (PlayerName != "" && Gender != "")
                 ActiveButton(true);
             else
                 ActiveButton(false);
@@ -246,9 +245,12 @@ iOSNotificationCenter.ScheduleNotification(notification);
 
         public void PlayGame()
         {
-            SaveData(Prefs.PlayerName, PlayerName);
+            PlayerPrefs.SetString("Name", PlayerName);
+            PlayerPrefs.SetString("Gender", Gender);
+            PlayerPrefs.SetFloat("Progress", 0f);
+            /*SaveData(Prefs.PlayerName, PlayerName);
             SaveData(Prefs.Gender, Gender);
-            SaveData(Prefs.Progress, "0");
+            SaveData(Prefs.Progress, "0");*/
             SceneManager.LoadScene("MainMenu");
 
             PlayerPrefs.SetInt("PlayerSetup", 1);
