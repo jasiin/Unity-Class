@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class MoveBehaviourScript : MonoBehaviour
 {
-    public GameObject  SpnBtn;
-    
+    public GameObject SpnBtn;
+
     public Rigidbody2D rb;
     public float speed = 1;
     private Vector3 moveAxis;
@@ -18,7 +18,7 @@ public class MoveBehaviourScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + (moveAxis * speed * Time.fixedDeltaTime));
+        //rb.MovePosition(rb.position + (moveAxis * speed * Time.fixedDeltaTime));
     }
 
 }

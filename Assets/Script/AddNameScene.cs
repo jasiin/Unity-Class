@@ -32,8 +32,8 @@ namespace Scenes.Scripts
 
         #endregion Components
 
-        private Regex regex = new Regex(@"^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{3,25}$");
-        private string message = "Wróć do gry i zobacz jak potoczą się losy HalXa! Graj i rozwijaj swoje umiejętności.";
+        // private Regex regex = new Regex(@"^[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]{3,25}$");
+        // private string message = "Wróć do gry i zobacz jak potoczą się losy HalXa! Graj i rozwijaj swoje umiejętności.";
         public string PlayerName;
         public string Gender;
         public bool ClearPrefs;
